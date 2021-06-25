@@ -1,0 +1,60 @@
+html, body
+{
+    height: 100%;
+    margin: 0;
+}
+
+body
+{
+    font-size: 2em;
+    display: grid;
+    grid-template-rows: 
+        min-content
+        1fr
+        min-content;
+}
+
+header
+{
+    background-color: yellow;
+    font-size: 2em;
+    text-align: center;
+}
+
+nav
+{
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    padding: 2em;
+    gap: 2em;
+    overflow-y: scroll;
+}
+
+footer
+{
+    background-color: green;
+    text-align: right;
+    font-size: 0.8em;
+}
+
+a
+{
+    background-color: red;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+}
+
+@media screen and (orientation:portrait) {
+    body
+    {
+      font-size: 4em;
+    }
+    nav
+    {
+        grid-template-columns: 1fr;
+        scrollbar-width: none;
+    }
+  }
