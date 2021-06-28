@@ -1,3 +1,25 @@
+@media (prefers-color-scheme: light)
+{
+    :root
+    {
+        --color-theme-1:#FCF8EC;
+        --color-theme-2:#D0E8F2;
+        --color-theme-3:#79A3B1;
+        --color-theme-4:#456268;
+    }
+}
+
+@media (prefers-color-scheme: dark)
+{
+    :root
+    {
+        --color-theme-1:#382933;
+        --color-theme-2:#3B5249;
+        --color-theme-3:#519872;
+        --color-theme-4:#A4B494;
+    }
+}
+
 html, body
 {
     height: 100%;
@@ -6,6 +28,7 @@ html, body
 
 body
 {
+    color: var(--color-theme-4);
     font-size: 2em;
     display: grid;
     grid-template-rows: 
@@ -14,19 +37,25 @@ body
         min-content;
 }
 
+header,footer
+{
+    z-index: 1;
+}
+
 header
 {
-    background-color: yellow;
+    background-color: var(--color-theme-1);
     font-size: 2em;
     text-align: center;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
 
 nav
 {
-    background-color: blue;
+    background-color: var(--color-theme-2);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content min-content;
+    grid-auto-rows: min-content;
     padding: 2em;
     gap: 2em;
     overflow-y: scroll;
@@ -34,17 +63,36 @@ nav
 
 footer
 {
-    background-color: green;
+    background-color: var(--color-theme-1);
     text-align: right;
     font-size: 0.8em;
+    box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.6);
 }
 
 a
 {
-    background-color: red;
+    background-color: var(--color-theme-3);
     border-radius: 0.5em;
     padding: 1em;
     text-align: center;
+    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+a, a:visited
+{
+    color: var(--color-theme-1);
+}
+
+a:hover
+{
+    box-shadow: 1px 1px 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes buttonShadowAnim
+{
+    
 }
 
 @media screen and (orientation:portrait) {
@@ -58,3 +106,5 @@ a
         scrollbar-width: none;
     }
   }
+
+  
