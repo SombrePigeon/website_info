@@ -4,7 +4,7 @@ services:
     web:
         build: 
             context: .
-            target: prod
+            target: dev
         volumes:
             - ./html/:/usr/local/apache2/htdocs/:ro
         networks:
